@@ -3,129 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Morocco</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Discover Morocco</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
+
         header {
-            background: url('hero-image.jpg') no-repeat center center/cover;
-            height: 80vh;
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-        header p {
-            font-size: 1.2rem;
-        }
-        nav {
-            background-color: #004d40;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        section {
+            background-color: #006d77;
+            color: #fff;
             padding: 20px;
             text-align: center;
         }
-        .destinations, .activities {
+
+        nav {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            background-color: #83c5be;
+            padding: 10px 0;
         }
+
+        nav a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #006d77;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .section-title {
+            color: #006d77;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
         .card {
             border: 1px solid #ccc;
-            border-radius: 10px;
-            margin: 15px;
-            width: 300px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+
         .card img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
         }
-        .card h3 {
-            margin: 10px 0;
+
+        .card-body {
+            padding: 10px;
         }
+
         footer {
-            background-color: #004d40;
-            color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 10px;
+            background-color: #006d77;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Explore Morocco</h1>
-        <p>Discover the magic of Morocco: its cities, culture, and breathtaking landscapes.</p>
-    </header>
-    <nav>
-        <a href="#destinations">Destinations</a>
-        <a href="#activities">Activities</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <section id="destinations">
-        <h2>Top Destinations</h2>
-        <div class="destinations">
+
+<header>
+    <h1>Discover Morocco</h1>
+    <p>Your guide to the beauty, culture, and heritage of Morocco</p>
+</header>
+
+<nav>
+    <a href="#culture">Culture</a>
+    <a href="#landscapes">Landscapes</a>
+    <a href="#cuisine">Cuisine</a>
+    <a href="#history">History</a>
+</nav>
+
+<section id="culture">
+    <div class="container">
+        <h2 class="section-title">Culture</h2>
+        <p>Morocco is a vibrant mix of traditions, languages, and artistry. From the colorful souks of Marrakesh to the timeless music of Andalusian orchestras, Moroccan culture is as diverse as its people.</p>
+    </div>
+</section>
+
+<section id="landscapes">
+    <div class="container">
+        <h2 class="section-title">Landscapes</h2>
+        <div class="grid">
             <div class="card">
-                <img src="marrakech.jpg" alt="Marrakech">
-                <h3>Marrakech</h3>
-                <p>The Red City offers vibrant markets, stunning palaces, and desert adventures.</p>
+                <img src="https://via.placeholder.com/300x200" alt="Sahara Desert">
+                <div class="card-body">
+                    <h3>Sahara Desert</h3>
+                    <p>Experience the vast dunes of the Sahara under a star-filled sky.</p>
+                </div>
             </div>
             <div class="card">
-                <img src="chefchaouen.jpg" alt="Chefchaouen">
-                <h3>Chefchaouen</h3>
-                <p>The Blue Pearl of Morocco, known for its blue-painted streets and tranquil atmosphere.</p>
-            </div>
-            <div class="card">
-                <img src="fes.jpg" alt="Fes">
-                <h3>Fes</h3>
-                <p>The spiritual heart of Morocco, boasting ancient medinas and rich history.</p>
-            </div>
-        </div>
-    </section>
-    <section id="activities">
-        <h2>Activities and Experiences</h2>
-        <div class="activities">
-            <div class="card">
-                <img src="desert.jpg" alt="Desert Trek">
-                <h3>Desert Trek</h3>
-                <p>Experience the magic of the Sahara Desert with camel rides and overnight camps.</p>
-            </div>
-            <div class="card">
-                <img src="food.jpg" alt="Moroccan Cuisine">
-                <h3>Moroccan Cuisine</h3>
-                <p>Savor the flavors of Moroccan cuisine with cooking classes and food tours.</p>
-            </div>
-            <div class="card">
-                <img src="culture.jpg" alt="Cultural Tours">
-                <h3>Cultural Tours</h3>
-                <p>Immerse yourself in Moroccan culture with guided tours of historic sites.</p>
+                <img src="https://via.placeholder.com/300x200" alt="Atlas Mountains">
+                <div class="card-body">
+                    <h3>Atlas Mountains</h3>
+                    <p>Explore the rugged beauty and traditional Berber villages in the mountains.</p>
+                </div>
             </div>
         </div>
-    </section>
-    <footer>
-        <p>&copy; 2025 Explore Morocco. All rights reserved.</p>
-    </footer>
+    </div>
+</section>
+
+<section id="cuisine">
+    <div class="container">
+        <h2 class="section-title">Cuisine</h2>
+        <p>Moroccan cuisine is a feast for the senses. Enjoy iconic dishes like tagine, couscous, and pastilla, flavored with a unique blend of spices like saffron, cinnamon, and cumin.</p>
+    </div>
+</section>
+
+<section id="history">
+    <div class="container">
+        <h2 class="section-title">History</h2>
+        <p>With a history that spans thousands of years, Morocco has seen the rise and fall of dynasties and empires, leaving behind a rich tapestry of historical sites and landmarks.</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Discover Morocco. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
