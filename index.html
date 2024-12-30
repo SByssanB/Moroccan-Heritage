@@ -1,131 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moroccan Heritage</title>
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moroccan Heritage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #ff5100;
-            color: white;
-            font-size: 2.5em;
-            font-family: 'Almarai', sans-serif;
-        }
+    header {
+      background: #ff5100;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
 
-        .hero-image {
-            width: 100%;
-            height: 400px;
-            background-image: url('https://images.pexels.com/photos/3581916/pexels-photo-3581916.jpeg');
-            background-position: center;
-            background-size: cover;
-            position: relative;
-        }
+    .content {
+      margin: 20px;
+    }
 
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-        }
+    .section {
+      margin: 20px 0;
+    }
 
-        .section {
-            padding: 30px;
-            margin: 20px;
-        }
+    .history, .culture {
+      padding: 20px;
+      background-color: #9cd5ff;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
 
-        .section h2 {
-            font-size: 2em;
-            color: #851715;
-        }
+    .history h2, .culture h2 {
+      font-size: 24px;
+      color: #851715;
+    }
 
-        #history-text, #culture-text {
-            font-size: 1.2em;
-            color: #555;
-        }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+    }
 
-        #culture ul {
-            list-style-type: none;
-            padding: 0;
-        }
+    iframe {
+      width: 100%;
+      height: 300px;
+      margin: 10px 0;
+    }
 
-        #culture li {
-            background-color: #9cd5ff;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 10px;
-        }
+    #history-text, #culture-text {
+      font-size: 16px;
+    }
 
-        .interactive-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #851715;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+    [contenteditable] {
+      outline: none;
+    }
 
-        .interactive-button:hover {
-            background-color: #ff5100;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #851715;
-            color: white;
-        }
-
-    </style>
+    button {
+      padding: 10px 20px;
+      background-color: #851715;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        Moroccan Heritage - التراث المغربي
-    </header>
 
-    <div class="hero-image">
-        <div class="hero-overlay"></div>
+<header>
+  <h1>Moroccan Heritage <span style="font-size: 24px; font-family: 'Amiri', serif;">التراث المغربي</span></h1>
+</header>
+
+<div class="content">
+  <section class="section history">
+    <h2>History</h2>
+    <p id="history-text" contenteditable="true">Your history content goes here.</p>
+  </section>
+
+  <section class="section culture">
+    <h2>Culture</h2>
+    <p id="culture-text" contenteditable="true">Your culture content goes here.</p>
+
+    <div id="interactive-features">
+      <ul>
+        <li contenteditable="true">Music</li>
+        <li contenteditable="true">Food</li>
+        <li contenteditable="true">Art</li>
+        <li contenteditable="true">Architecture</li>
+        <li contenteditable="true">Clothes</li>
+      </ul>
     </div>
+  </section>
+</div>
 
-    <section class="section history">
-        <h2>History</h2>
-        <p id="history-text" contenteditable="true">Your history content goes here. You can update this section directly by editing the content of this paragraph.</p>
-    </section>
+<div class="content">
+  <button onclick="addImage('https://images.pexels.com/photos/3581916/pexels-photo-3581916.jpeg')">Add Image</button>
+  <button onclick="addVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">Add Video</button>
+</div>
 
-    <section class="section culture" id="culture">
-        <h2>Culture</h2>
-        <p id="culture-text" contenteditable="true">Discover the rich cultural heritage of Morocco. Each part of the culture is a reflection of Morocco's vibrant history.</p>
+<script>
+  function addImage(url) {
+    const img = document.createElement('img');
+    img.src = url;
+    document.querySelector('.culture').appendChild(img);
+  }
 
-        <ul>
-            <li><b>Music:</b> Traditional Moroccan music with influences from Arabic, Berber, and Sub-Saharan African traditions.</li>
-            <li><b>Food:</b> Moroccan cuisine, including tagine, couscous, and traditional sweets like baklava.</li>
-            <li><b>Art:</b> Unique Moroccan arts, including mosaics, pottery, and calligraphy.</li>
-            <li><b>Architecture:</b> Morocco's famous architecture, like the Hassan II Mosque, kasbahs, and riads.</li>
-            <li><b>Clothes:</b> Traditional Moroccan attire, such as the djellaba and caftan.</li>
-        </ul>
-    </section>
+  function addVideo(url) {
+    const video = document.createElement('iframe');
+    video.src = url;
+    document.querySelector('.culture').appendChild(video);
+  }
+</script>
 
-    <footer>
-        <p>Moroccan Heritage &copy; 2024. All rights reserved.</p>
-    </footer>
-    
-    <script>
-        // JavaScript to make sections editable
-        document.getElementById('history-text').contentEditable = true;
-        document.getElementById('culture-text').contentEditable = true;
-    </script>
 </body>
 </html>
