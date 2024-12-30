@@ -66,6 +66,17 @@
         button:hover {
             background-color: #ff5100;
         }
+
+        #map { height: 500px; }
+
+        /* Calendar styling */
+        .calendar {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -97,56 +108,84 @@
         </ul>
     </section>
 
-    <button id="saveButton">Save Changes</button>
-
-    <section id="dynamic-content">
-        <h2>Add Media</h2>
-        <input type="text" id="image-url" placeholder="Enter image URL">
-        <button onclick="addImage()">Add Image</button>
-        <br><br>
-        <input type="text" id="video-url" placeholder="Enter video URL">
-        <button onclick="addVideo()">Add Video</button>
+    <!-- Interactive Map Section -->
+    <section class="section map">
+        <h2>Interactive Map of Morocco</h2>
+        <div id="map"></div>
     </section>
 
-    <div contenteditable="true">
-        Edit this text directly in the browser.
-    </div>
+    <!-- 360° Virtual Tour Section -->
+    <section class="section virtual-tour">
+        <h2>360° Virtual Tours of Moroccan Landmarks</h2>
+        <iframe src="https://www.example.com/360-tour" width="100%" height="500px"></iframe>
+    </section>
 
+    <!-- Traditional Crafts Section -->
+    <section class="section crafts">
+        <h2>Traditional Moroccan Crafts</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/example" frameborder="0" allowfullscreen></iframe>
+        <p>Watch the video above to explore traditional crafts like pottery and weaving!</p>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="section quiz">
+        <h2>Test Your Knowledge</h2>
+        <p>Answer the following question about Moroccan culture:</p>
+        <form id="quiz-form">
+            <label for="question1">Who is a famous Moroccan historical figure?</label><br>
+            <input type="radio" name="question1" value="A"> Ibn Battuta<br>
+            <input type="radio" name="question1" value="B"> Cleopatra<br>
+            <input type="radio" name="question1" value="C"> Napoleon Bonaparte<br>
+            <button type="button" onclick="checkAnswer()">Submit Answer</button>
+        </form>
+        <div id="quiz-result"></div>
+    </section>
+
+    <!-- Cultural Calendar Section -->
+    <section class="section calendar">
+        <h2>Upcoming Cultural Events</h2>
+        <div id="calendar"></div>
+    </section>
+
+    <button id="saveButton">Save Changes</button>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.0/dist/fullcalendar.min.js"></script>
     <script>
-        // JavaScript for saving the changes made in contenteditable sections
-        document.getElementById("saveButton").addEventListener("click", function() {
-            const historyContent = document.getElementById("history-text").innerText;
-            const cultureContent = document.querySelector(".culture .editable").innerText;
+        // Interactive Map of Morocco
+        var map = L.map('map').setView([31.7917, -7.0926], 6);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
 
-            console.log("History Content: ", historyContent);
-            console.log("Culture Content: ", cultureContent);
+        // Example of adding a clickable region (Marrakech)
+        var marker = L.marker([31.6295, -7.9811]).addTo(map);
+        marker.bindPopup("<b>Marrakech</b><br>Historical sites, festivals, and traditional crafts.");
 
-            // You can send the content to the server or handle it as needed
-            alert("Changes Saved Successfully!");
+        // Quiz functionality
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="question1"]:checked');
+            var resultDiv = document.getElementById('quiz-result');
+            if (selectedAnswer) {
+                if (selectedAnswer.value === 'A') {
+                    resultDiv.innerHTML = "Correct! Ibn Battuta is a famous Moroccan explorer.";
+                } else {
+                    resultDiv.innerHTML = "Incorrect. The correct answer is Ibn Battuta.";
+                }
+            } else {
+                resultDiv.innerHTML = "Please select an answer.";
+            }
+        }
+
+        // Initialize Calendar
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                events: [
+                    { title: 'Marrakech Festival', start: '2024-12-15' },
+                    { title: 'Fes Music Week', start: '2025-01-10' }
+                ]
+            });
         });
-
-        // Function to add an image dynamically
-        function addImage() {
-            const url = document.getElementById('image-url').value;
-            if (url) {
-                const img = document.createElement('img');
-                img.src = url;
-                img.style.width = "100%";
-                document.querySelector('.culture').appendChild(img);
-            }
-        }
-
-        // Function to add a video dynamically
-        function addVideo() {
-            const url = document.getElementById('video-url').value;
-            if (url) {
-                const video = document.createElement('iframe');
-                video.src = url;
-                video.style.width = "100%";
-                video.style.height = "400px";
-                document.querySelector('.culture').appendChild(video);
-            }
-        }
     </script>
 </body>
 </html>
