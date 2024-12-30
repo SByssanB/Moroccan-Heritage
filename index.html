@@ -3,65 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Moroccan heritage, history, culture, and more.">
-    <meta name="keywords" content="Moroccan heritage, history of Morocco, Moroccan culture, Moroccan traditions">
-    <meta name="author" content="Your Name">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Caveat&display=swap" rel="stylesheet">
+    <title>Explore Morocco</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Moroccan Heritage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            height: 80vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+        nav {
+            background-color: #004d40;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .destinations, .activities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 15px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
-        <div class="header-text">
-            <span class="english">Moroccan Heritage</span>
-            <span class="arabic">التراث المغربي</span>
-        </div>
+        <h1>Explore Morocco</h1>
+        <p>Discover the magic of Morocco: its cities, culture, and breathtaking landscapes.</p>
     </header>
-
-    <!-- Navigation Bar -->
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#history">History</a></li>
-            <li><a href="#culture">Culture</a></li>
-            <li><a href="#about-us">About Us</a></li>
-        </ul>
+        <a href="#destinations">Destinations</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
     </nav>
-
-    <!-- Editable Section -->
-    <section class="editable-section" id="history">
-        <h2>History of Morocco</h2>
-        <div contenteditable="true" class="editable-content">
-            Edit this section to add the history of Morocco...
+    <section id="destinations">
+        <h2>Top Destinations</h2>
+        <div class="destinations">
+            <div class="card">
+                <img src="marrakech.jpg" alt="Marrakech">
+                <h3>Marrakech</h3>
+                <p>The Red City offers vibrant markets, stunning palaces, and desert adventures.</p>
+            </div>
+            <div class="card">
+                <img src="chefchaouen.jpg" alt="Chefchaouen">
+                <h3>Chefchaouen</h3>
+                <p>The Blue Pearl of Morocco, known for its blue-painted streets and tranquil atmosphere.</p>
+            </div>
+            <div class="card">
+                <img src="fes.jpg" alt="Fes">
+                <h3>Fes</h3>
+                <p>The spiritual heart of Morocco, boasting ancient medinas and rich history.</p>
+            </div>
         </div>
     </section>
-
-    <!-- Multimedia Section -->
-    <section class="media-section">
-        <h2>Moroccan Culture</h2>
-        <img src="morocco-image.jpg" alt="Morocco" class="media">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/video-id" frameborder="0" allowfullscreen></iframe>
-        <audio controls>
-            <source src="audio-file.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
+    <section id="activities">
+        <h2>Activities and Experiences</h2>
+        <div class="activities">
+            <div class="card">
+                <img src="desert.jpg" alt="Desert Trek">
+                <h3>Desert Trek</h3>
+                <p>Experience the magic of the Sahara Desert with camel rides and overnight camps.</p>
+            </div>
+            <div class="card">
+                <img src="food.jpg" alt="Moroccan Cuisine">
+                <h3>Moroccan Cuisine</h3>
+                <p>Savor the flavors of Moroccan cuisine with cooking classes and food tours.</p>
+            </div>
+            <div class="card">
+                <img src="culture.jpg" alt="Cultural Tours">
+                <h3>Cultural Tours</h3>
+                <p>Immerse yourself in Moroccan culture with guided tours of historic sites.</p>
+            </div>
+        </div>
     </section>
-
-    <!-- Search Bar -->
-    <section class="search-section">
-        <input type="text" id="search" placeholder="Search...">
-    </section>
-
-    <!-- Footer Section with Newsletter -->
     <footer>
-        <div class="newsletter">
-            <h3>Subscribe to Our Newsletter</h3>
-            <form>
-                <input type="email" id="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
+        <p>&copy; 2025 Explore Morocco. All rights reserved.</p>
     </footer>
 </body>
 </html>
