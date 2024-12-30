@@ -3,150 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An educational and informative website about Morocco, covering its history, culture, traditions, and landscapes.">
     <title>Discover Morocco</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #006d77;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #83c5be;
-            padding: 10px 0;
-        }
-
-        nav a {
-            color: #000;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #006d77;
-        }
-
-        section {
-            padding: 20px;
-        }
-
-        .section-title {
-            color: #006d77;
-            margin-bottom: 10px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
-        }
-
-        .card-body {
-            padding: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #006d77;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Amiri&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<header>
-    <h1>Discover Morocco</h1>
-    <p>Your guide to the beauty, culture, and heritage of Morocco</p>
-</header>
-
-<nav>
-    <a href="#culture">Culture</a>
-    <a href="#landscapes">Landscapes</a>
-    <a href="#cuisine">Cuisine</a>
-    <a href="#history">History</a>
-</nav>
-
-<section id="culture">
-    <div class="container">
-        <h2 class="section-title">Culture</h2>
-        <p>Morocco is a vibrant mix of traditions, languages, and artistry. From the colorful souks of Marrakesh to the timeless music of Andalusian orchestras, Moroccan culture is as diverse as its people.</p>
-    </div>
-</section>
-
-<section id="landscapes">
-    <div class="container">
-        <h2 class="section-title">Landscapes</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Sahara Desert">
-                <div class="card-body">
-                    <h3>Sahara Desert</h3>
-                    <p>Experience the vast dunes of the Sahara under a star-filled sky.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Atlas Mountains">
-                <div class="card-body">
-                    <h3>Atlas Mountains</h3>
-                    <p>Explore the rugged beauty and traditional Berber villages in the mountains.</p>
-                </div>
-            </div>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#history">History</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#personalities">Important Personalities</a></li>
+                <li><a href="#landscapes">Landscapes</a></li>
+                <li><a href="#languages">Languages</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Discover Morocco</h1>
+            <p>Explore the rich history, vibrant culture, and breathtaking landscapes of Morocco.</p>
         </div>
-    </div>
-</section>
+    </header>
 
-<section id="cuisine">
-    <div class="container">
-        <h2 class="section-title">Cuisine</h2>
-        <p>Moroccan cuisine is a feast for the senses. Enjoy iconic dishes like tagine, couscous, and pastilla, flavored with a unique blend of spices like saffron, cinnamon, and cumin.</p>
-    </div>
-</section>
+    <main>
+        <section id="history">
+            <h2>History of Morocco</h2>
+            <p>Starting from Prehistoric Morocco to its current modern history, learn about the key events that shaped this fascinating country.</p>
+            <div class="content-block">
+                <img src="images/history.jpg" alt="Historical sites in Morocco">
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </section>
 
-<section id="history">
-    <div class="container">
-        <h2 class="section-title">History</h2>
-        <p>With a history that spans thousands of years, Morocco has seen the rise and fall of dynasties and empires, leaving behind a rich tapestry of historical sites and landmarks.</p>
-    </div>
-</section>
+        <section id="culture">
+            <h2>Culture</h2>
+            <div class="sub-section">
+                <h3>Food</h3>
+                <p>Discover the rich and flavorful cuisine of Morocco.</p>
+            </div>
+            <div class="sub-section">
+                <h3>Architecture</h3>
+                <p>Explore Morocco's stunning architectural marvels.</p>
+            </div>
+            <div class="sub-section">
+                <h3>Arts</h3>
+                <p>Delve into Morocco's artistic heritage, including music, dance, and crafts.</p>
+            </div>
+            <div class="sub-section">
+                <h3>Traditions and Customs</h3>
+                <p>Learn about the unique traditions and customs that define Moroccan life.</p>
+            </div>
+        </section>
 
-<footer>
-    <p>&copy; 2024 Discover Morocco. All rights reserved.</p>
-</footer>
+        <section id="personalities">
+            <h2>Important Personalities</h2>
+            <p>Meet influential figures in Moroccan history like Ibn Battuta and Tariq Ibn Ziyad.</p>
+            <div class="content-block">
+                <img src="images/personalities.jpg" alt="Famous Moroccan personalities">
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </section>
 
+        <section id="landscapes">
+            <h2>Landscapes</h2>
+            <p>From the Atlas Mountains to the Sahara Desert, Morocco's landscapes are breathtakingly diverse.</p>
+            <div class="gallery">
+                <img src="images/landscape1.jpg" alt="Atlas Mountains">
+                <img src="images/landscape2.jpg" alt="Sahara Desert">
+                <img src="images/landscape3.jpg" alt="Coastal Views">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="language-switcher">
+            <p>Available in:</p>
+            <ul>
+                <li><a href="#">English</a></li>
+                <li><a href="#">Français</a></li>
+                <li><a href="#">العربية</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 Discover Morocco. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
