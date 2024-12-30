@@ -1,130 +1,81 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Morocco</title>
+    <title>Moroccan Heritage</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            <img src="images/brown-concrete-building.jpg" alt="Building by the water" />
         }
         header {
-            background-color: #c0392b;
-            color: white;
-            padding: 1rem 0;
             text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
+            color: #ffffff;
+            background-color: #851715;
+            padding: 50px;
+            font-size: 50px;
+            font-family: 'Cursive';
         }
-        nav {
-            background-color: #8e44ad;
-            display: flex;
-            justify-content: center;
-            padding: 0.5rem;
+        header .arabic {
+            font-size: 40px;
+            font-family: 'Moroccan Arabic';
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.2rem;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 2rem;
-        }
-        .hero {
-            background-image: url('https://example.com/morocco.jpg'); /* Replace with a stunning Moroccan image */
+        .container {
+            background-image: url('https://images.pexels.com/photos/3581916/pexels-photo-3581916.jpeg');
             background-size: cover;
             background-position: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 4px #000;
-            font-size: 2rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-        .card {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background-color: #2c3e50;
+            padding: 200px 0;
             color: white;
             text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .section {
+            padding: 40px;
+            margin: 20px;
+            background-color: #9cd5ff;
+            border-radius: 10px;
+        }
+        .history, .culture {
+            background-color: #ff5100;
+            color: white;
+            font-size: 24px;
+        }
+        .footer {
+            text-align: center;
+            background-color: #851715;
+            padding: 20px;
+            color: white;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <header>
-        Discover Morocco
-    </header>
-    <nav>
-        <a href="#history">History</a>
-        <a href="#culture">Culture</a>
-        <a href="#tourism">Tourism</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
-    <section class="hero">
-        Welcome to the Land of Rich Heritage and Culture
-    </section>
+<header>
+    Moroccan Heritage
+    <div class="arabic">التراث المغربي</div>
+</header>
 
-    <section id="history">
-        <h2>History of Morocco</h2>
-        <p>Morocco has a fascinating history that spans centuries, from the Berber tribes to the establishment of great dynasties and its role as a cultural crossroads.</p>
-    </section>
-<a href="history.html">Read More About Our History</a>
+<div class="container">
+    <div>Welcome to a journey through Morocco's rich cultural and historical heritage</div>
+</div>
 
-    <section id="culture">
-        <h2>Culture of Morocco</h2>
-  <a href="culture.html">Explore Our Culture</a>
+<section class="section history">
+    <h2>History</h2>
+    <p>Morocco has a rich and diverse history, from ancient times to modern-day achievements.</p>
+</section>
 
-        <div class="grid">
-            <div class="card">
-                <h3>Food</h3>
-                <p>Explore Moroccan cuisine, famous for dishes like tagine and couscous.</p>
-            </div>
-            <div class="card">
-                <h3>Music</h3>
-                <p>Learn about traditional Moroccan music, including Andalusian and Gnawa styles.</p>
-            </div>
-            <div class="card">
-                <h3>Art</h3>
-                <p>Marvel at intricate tilework, carpets, and the art of Zellij.</p>
-            </div>
-        </div>
-    </section>
+<section class="section culture">
+    <h2>Culture</h2>
+    <p>The culture of Morocco is a blend of Berber, Arab, and European influences, rich in music, food, and art.</p>
+</section>
 
-    <section id="tourism">
-        <h2>Tourism in Morocco</h2>
-        <p>From the bustling souks of Marrakech to the serene blue streets of Chefchaouen, Morocco offers unforgettable experiences.</p>
-    </section>
+<footer class="footer">
+    <p>Explore more about Moroccan heritage and its beautiful landscape.</p>
+</footer>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@discovermorocco.com</p>
-    </section>
-
-    <footer>
-        &copy; 2024 Discover Morocco. All rights reserved.
-    </footer>
 </body>
 </html>
