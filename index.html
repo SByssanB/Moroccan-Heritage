@@ -1,120 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moroccan Heritage</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moroccan Heritage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-    header {
-      background: #ff5100;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+        header {
+            background: #ff5100;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 3em;
+            font-family: 'Moroccan Arabic', sans-serif;
+        }
 
-    .content {
-      margin: 20px;
-    }
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background-image: url('https://www.pexels.com/photo/brown-concrete-building-near-body-of-water-3581916/');
+            background-size: cover;
+            background-position: center;
+        }
 
-    .section {
-      margin: 20px 0;
-    }
+        .section {
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            background-color: #9cd5ff;
+        }
 
-    .history, .culture {
-      padding: 20px;
-      background-color: #9cd5ff;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
+        h2 {
+            font-size: 2em;
+            color: #851715;
+        }
 
-    .history h2, .culture h2 {
-      font-size: 24px;
-      color: #851715;
-    }
+        .content {
+            font-size: 1.2em;
+        }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      margin: 10px 0;
-    }
+        .editable {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-    iframe {
-      width: 100%;
-      height: 300px;
-      margin: 10px 0;
-    }
+        button {
+            background-color: #851715;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    #history-text, #culture-text {
-      font-size: 16px;
-    }
-
-    [contenteditable] {
-      outline: none;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #851715;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-  </style>
+        button:hover {
+            background-color: #ff5100;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        Moroccan Heritage <br>
+        التراث المغربي
+    </header>
 
-<header>
-  <h1>Moroccan Heritage <span style="font-size: 24px; font-family: 'Amiri', serif;">التراث المغربي</span></h1>
-</header>
+    <div class="hero-image"></div>
 
-<div class="content">
-  <section class="section history">
-    <h2>History</h2>
-    <p id="history-text" contenteditable="true">Your history content goes here.</p>
-  </section>
+    <section class="section history">
+        <h2>History</h2>
+        <div id="history-text" class="editable" contenteditable="true">
+            Edit this section with your own history content.
+        </div>
+    </section>
 
-  <section class="section culture">
-    <h2>Culture</h2>
-    <p id="culture-text" contenteditable="true">Your culture content goes here.</p>
+    <section class="section culture">
+        <h2>Culture</h2>
+        <div class="editable" contenteditable="true">
+            Edit this section with information about culture, such as Music, Food, Art, Architecture, and Clothing.
+        </div>
+        <ul>
+            <li>Music</li>
+            <li>Food</li>
+            <li>Art</li>
+            <li>Architecture</li>
+            <li>Clothing</li>
+        </ul>
+    </section>
 
-    <div id="interactive-features">
-      <ul>
-        <li contenteditable="true">Music</li>
-        <li contenteditable="true">Food</li>
-        <li contenteditable="true">Art</li>
-        <li contenteditable="true">Architecture</li>
-        <li contenteditable="true">Clothes</li>
-      </ul>
-    </div>
-  </section>
-</div>
+    <button id="saveButton">Save Changes</button>
 
-<div class="content">
-  <button onclick="addImage('https://images.pexels.com/photos/3581916/pexels-photo-3581916.jpeg')">Add Image</button>
-  <button onclick="addVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">Add Video</button>
-</div>
+    <section id="dynamic-content">
+        <h2>Add Media</h2>
+        <input type="text" id="image-url" placeholder="Enter image URL">
+        <button onclick="addImage()">Add Image</button>
+        <br><br>
+        <input type="text" id="video-url" placeholder="Enter video URL">
+        <button onclick="addVideo()">Add Video</button>
+    </section>
 
-<script>
-  function addImage(url) {
-    const img = document.createElement('img');
-    img.src = url;
-    document.querySelector('.culture').appendChild(img);
-  }
+    <script>
+        // JavaScript for saving the changes made in contenteditable sections
+        document.getElementById("saveButton").addEventListener("click", function() {
+            const historyContent = document.getElementById("history-text").innerText;
+            const cultureContent = document.querySelector(".culture .editable").innerText;
 
-  function addVideo(url) {
-    const video = document.createElement('iframe');
-    video.src = url;
-    document.querySelector('.culture').appendChild(video);
-  }
-</script>
+            console.log("History Content: ", historyContent);
+            console.log("Culture Content: ", cultureContent);
 
+            // You can send the content to the server or handle it as needed
+            alert("Changes Saved Successfully!");
+        });
+
+        // Function to add an image dynamically
+        function addImage() {
+            const url = document.getElementById('image-url').value;
+            if (url) {
+                const img = document.createElement('img');
+                img.src = url;
+                img.style.width = "100%";
+                document.querySelector('.culture').appendChild(img);
+            }
+        }
+
+        // Function to add a video dynamically
+        function addVideo() {
+            const url = document.getElementById('video-url').value;
+            if (url) {
+                const video = document.createElement('iframe');
+                video.src = url;
+                video.style.width = "100%";
+                video.style.height = "400px";
+                document.querySelector('.culture').appendChild(video);
+            }
+        }
+    </script>
 </body>
 </html>
