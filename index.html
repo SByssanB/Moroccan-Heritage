@@ -3,189 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Moroccan Heritage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #ff5100;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 3em;
-            font-family: 'Moroccan Arabic', sans-serif;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 400px;
-            background-image: url('https://www.pexels.com/photo/brown-concrete-building-near-body-of-water-3581916/');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .section {
-            padding: 20px;
-            margin: 20px;
-            border-radius: 8px;
-            background-color: #9cd5ff;
-        }
-
-        h2 {
-            font-size: 2em;
-            color: #851715;
-        }
-
-        .content {
-            font-size: 1.2em;
-        }
-
-        .editable {
-            background-color: #fff;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #851715;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #ff5100;
-        }
-
-        #map { height: 500px; }
-
-        /* Calendar styling */
-        .calendar {
-            margin-top: 20px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-    </style>
+    <title>Explore Morocco</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        Moroccan Heritage <br>
-        التراث المغربي
+        <div class="logo">
+            <h1>Explore Morocco</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#subscribe">Subscribe</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="hero-image"></div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <h2>Welcome to Morocco!</h2>
+        <p>Your guide to the rich culture, history, and wonders of Morocco.</p>
+    </section>
 
-    <section class="section history">
-        <h2>History</h2>
-        <div id="history-text" class="editable" contenteditable="true">
-            Edit this section with your own history content.
+    <!-- History Section -->
+    <section id="history">
+        <h2>History of Morocco</h2>
+        <p>Morocco's history spans centuries and is rich with diverse influences...</p>
+        <div class="history-media">
+            <img src="path-to-image.jpg" alt="Moroccan history">
         </div>
     </section>
 
-    <section class="section culture">
-        <h2>Culture</h2>
-        <div class="editable" contenteditable="true">
-            Edit this section with information about culture, such as Music, Food, Art, Architecture, and Clothing.
+    <!-- Culture Section -->
+    <section id="culture">
+        <h2>Moroccan Culture</h2>
+        <p>Discover the traditions, music, food, and festivals of Morocco.</p>
+        <div class="culture-media">
+            <img src="path-to-image.jpg" alt="Moroccan culture">
         </div>
-        <ul>
-            <li>Music</li>
-            <li>Food</li>
-            <li>Art</li>
-            <li>Architecture</li>
-            <li>Clothing</li>
-        </ul>
     </section>
 
-    <!-- Interactive Map Section -->
-    <section class="section map">
-        <h2>Interactive Map of Morocco</h2>
-        <div id="map"></div>
-    </section>
-
-    <!-- 360° Virtual Tour Section -->
-    <section class="section virtual-tour">
-        <h2>360° Virtual Tours of Moroccan Landmarks</h2>
-        <iframe src="https://www.example.com/360-tour" width="100%" height="500px"></iframe>
-    </section>
-
-    <!-- Traditional Crafts Section -->
-    <section class="section crafts">
-        <h2>Traditional Moroccan Crafts</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/example" frameborder="0" allowfullscreen></iframe>
-        <p>Watch the video above to explore traditional crafts like pottery and weaving!</p>
-    </section>
-
-    <!-- Quiz Section -->
-    <section class="section quiz">
-        <h2>Test Your Knowledge</h2>
-        <p>Answer the following question about Moroccan culture:</p>
-        <form id="quiz-form">
-            <label for="question1">Who is a famous Moroccan historical figure?</label><br>
-            <input type="radio" name="question1" value="A"> Ibn Battuta<br>
-            <input type="radio" name="question1" value="B"> Cleopatra<br>
-            <input type="radio" name="question1" value="C"> Napoleon Bonaparte<br>
-            <button type="button" onclick="checkAnswer()">Submit Answer</button>
+    <!-- Newsletter Subscription Section -->
+    <section id="subscribe">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form id="subscribe-form">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
         </form>
-        <div id="quiz-result"></div>
     </section>
 
-    <!-- Cultural Calendar Section -->
-    <section class="section calendar">
-        <h2>Upcoming Cultural Events</h2>
-        <div id="calendar"></div>
-    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Explore Morocco. All Rights Reserved.</p>
+    </footer>
 
-    <button id="saveButton">Save Changes</button>
-
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.0/dist/fullcalendar.min.js"></script>
-    <script>
-        // Interactive Map of Morocco
-        var map = L.map('map').setView([31.7917, -7.0926], 6);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Example of adding a clickable region (Marrakech)
-        var marker = L.marker([31.6295, -7.9811]).addTo(map);
-        marker.bindPopup("<b>Marrakech</b><br>Historical sites, festivals, and traditional crafts.");
-
-        // Quiz functionality
-        function checkAnswer() {
-            var selectedAnswer = document.querySelector('input[name="question1"]:checked');
-            var resultDiv = document.getElementById('quiz-result');
-            if (selectedAnswer) {
-                if (selectedAnswer.value === 'A') {
-                    resultDiv.innerHTML = "Correct! Ibn Battuta is a famous Moroccan explorer.";
-                } else {
-                    resultDiv.innerHTML = "Incorrect. The correct answer is Ibn Battuta.";
-                }
-            } else {
-                resultDiv.innerHTML = "Please select an answer.";
-            }
-        }
-
-        // Initialize Calendar
-        $(document).ready(function() {
-            $('#calendar').fullCalendar({
-                events: [
-                    { title: 'Marrakech Festival', start: '2024-12-15' },
-                    { title: 'Fes Music Week', start: '2025-01-10' }
-                ]
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
